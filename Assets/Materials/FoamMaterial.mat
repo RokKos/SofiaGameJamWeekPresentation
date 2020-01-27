@@ -63,7 +63,7 @@ Material:
     - _DstBlend: 0
     - _Errorsion: 0.363
     - _FoamHeight: 28.9
-    - _FoamMaxValue: 0.55
+    - _FoamMaxValue: 1.83
     - _FoamScale: 149.9
     - _GlossMapScale: 1
     - _Glossiness: 0.5
