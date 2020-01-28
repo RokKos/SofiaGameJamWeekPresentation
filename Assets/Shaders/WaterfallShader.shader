@@ -68,7 +68,7 @@
                 // Foam effect
                 float invertedUVy = 1 - UV.y;
                 invertedUVy = pow(invertedUVy, _FoamHeight);
-                float foam = SimpleNoise(UV, _FoamScale) * invertedUVy;
+                float foam = SimpleNoise(movedUV, _FoamScale) * invertedUVy;
                 foam = Remap(foam, float2(0.0, 1.0), float2(0.0, _FoamMaxValue));
                 //return foam;
 
