@@ -60,10 +60,10 @@
 
             float WaterFallEffect(float2 UV, float2 movedUV) {
                 // Ripple effect
-                float ripple = Unity_Voronoi_float(movedUV, _Time.z * _VoronoiSpeed, _CellDensity);
+                float ripple = VoronoiNoise(movedUV, _Time.z * _VoronoiSpeed, _CellDensity);
                 ripple = pow(ripple, _RippleIntensity);
                 ripple = Remap(ripple, float2(0.0, 1.0), float2(_MinRippleValue, 1.0));
-                //return ripple;
+                //  return ripple;
 
                 // Foam effect
                 float invertedUVy = 1 - UV.y;

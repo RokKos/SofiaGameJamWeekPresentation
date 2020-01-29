@@ -8,7 +8,7 @@ inline float2 unity_voronoi_noise_randomVector (float2 UV, float offset)
     return float2(sin(UV.y*+offset)*0.5+0.5, cos(UV.x*offset)*0.5+0.5);
 }
 
-float Unity_Voronoi_float(float2 UV, float AngleOffset, float CellDensity)
+float VoronoiNoise(float2 UV, float AngleOffset, float CellDensity)
 {
     float2 g = floor(UV * CellDensity);
     float2 f = frac(UV * CellDensity);

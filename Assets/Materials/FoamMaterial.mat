@@ -78,9 +78,9 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _VertexOffsetCoef: 0.5
+    - _VertexOffsetCoef: 0.38
     - _VoronoiSpeed: 2.89
-    - _WaterSpeed: 15.5
+    - _WaterSpeed: 10
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

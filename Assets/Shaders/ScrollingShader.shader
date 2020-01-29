@@ -68,14 +68,14 @@
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 
                 float voronoiUV = o.uv + float2(0, _Time.y) * _VoronoiSpeed;
-                float voronoiNoise = Unity_Voronoi_float(voronoiUV, _VoronoiOffset, _VoronoiCellDensity);
+                float voronoiNoise = VoronoiNoise(voronoiUV, _VoronoiOffset, _VoronoiCellDensity);
                 
                 o.uv += float2(0, _Time.y) * _RippleSpeed;
                 o.uv = lerp(o.uv, o.uv + float2(voronoiNoise, voronoiNoise), _Distortion); 
 
                 // Vertex distortion
                 //fixed4 alpha = tex2Dlod(_MainTex, float4(o.uv, 0.0, 0.0));
-                //voronoiNoise = Unity_Voronoi_float(o.uv, _VoronoiOffset, _VoronoiCellDensity);
+                //voronoiNoise = VoronoiNoise(o.uv, _VoronoiOffset, _VoronoiCellDensity);
                 //float disolve = lerp(alpha.r, voronoiNoise, _DisolveCoef);
                 //disolve = pow(disolve, _DisolvePower);
 
@@ -92,7 +92,7 @@
                 //return float4(i.uv, 0.0, 1.0);
                 fixed4 alpha = tex2D(_MainTex, i.uv);
                 //return alpha;
-                float voronoiNoise = Unity_Voronoi_float(i.uv, _VoronoiOffset, _VoronoiCellDensity);
+                float voronoiNoise = VoronoiNoise(i.uv, _VoronoiOffset, _VoronoiCellDensity);
                 float disolve = lerp(alpha.r, voronoiNoise, _DisolveCoef);
                 disolve = pow(disolve, _DisolvePower);
 
